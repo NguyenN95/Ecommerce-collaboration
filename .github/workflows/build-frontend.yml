@@ -3,11 +3,12 @@
 
 name: Build Frontend
 
+# TODO: only run when add tag
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "TODO" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "TODO" ]
 
 jobs:
   build:
