@@ -15,23 +15,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/NguyenN95/repo_name">
+  <a href="https://github.com/NguyenN95/Ecommerce">
     <img src="images/logo.png" alt="Logo" width="150" height="150">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Ecommerce Application</h3>
 
   <p align="center">
-    project_description
+    Buy good stuffs with low price which make you feel like you are pro-shopper
     <br />
-    <a href="https://github.com/NguyenN95/repo_name#about-the-project"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/NguyenN95/Ecommerce#about-the-project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/NguyenN95/repo_name">View Demo</a>
+    <a href="https://github.com/NguyenN95/Ecommerce">View Demo</a>
     ·
-    <a href="https://github.com/NguyenN95/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/NguyenN95/Ecommerce/issues">Report Bug</a>
     ·
-    <a href="https://github.com/NguyenN95/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/NguyenN95/Ecommerce/issues">Request Feature</a>
   </p>
 </div>
 
@@ -44,7 +44,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#powered-by">Powered By</a></li>
       </ul>
     </li>
     <li>
@@ -70,22 +70,21 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+You do know that many companies have their own ecommerce websites are built from scratch or using shopify but now why do I need to build another one? Simply put, I want build a application with cross-cutting technologies (**ASP.NET Core** and **Blazor**) with simple and easy to use UI (**Bootstrap**) and fast release (**Github Actions**, **Docker**).
+
+> **So. Do you want to shop on oursite?**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-### Built With
+### Powered By
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![C#][C#]][CSharp-url]
+* [![.Net][.Net]][.Net-url]
+* [![Blazor][Blazor]][Blazor-url]
+* [![Docker][Docker]][Docker-url]
+* [![Github Actions][Github Actions]][Github-actions-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,7 +109,7 @@ This is an example of how to list things you need to use the software and how to
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/NguyenN95/repo_name.git
+   git clone https://github.com/NguyenN95/Ecommerce.git
    ```
 3. Install NPM packages
    ```sh
@@ -144,7 +143,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/NguyenN95/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/NguyenN95/Ecommerce/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -182,7 +181,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Nguyen - [@linkedin][linkedin-url] - nguyennguyen7595@gmail.com
 
-Project Link: [https://github.com/NguyenN95/repo_name](https://github.com/NguyenN95/repo_name)
+Project Link: [https://github.com/NguyenN95/Ecommerce](https://github.com/NguyenN95/Ecommerce)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,46 +210,40 @@ Project Link: [https://github.com/NguyenN95/repo_name](https://github.com/Nguyen
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/NguyenN95/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/NguyenN95/repo_name/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/NguyenN95/Ecommerce.svg?style=for-the-badge
+[contributors-url]: https://github.com/NguyenN95/Ecommerce/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/NguyenN95/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/NguyenN95/repo_name/network/members
+[forks-shield]: https://img.shields.io/github/forks/NguyenN95/Ecommerce.svg?style=for-the-badge
+[forks-url]: https://github.com/NguyenN95/Ecommerce/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/NguyenN95/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/NguyenN95/repo_name/stargazers
+[stars-shield]: https://img.shields.io/github/stars/NguyenN95/Ecommerce.svg?style=for-the-badge
+[stars-url]: https://github.com/NguyenN95/Ecommerce/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/NguyenN95/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/NguyenN95/repo_name/issues
+[issues-shield]: https://img.shields.io/github/issues/NguyenN95/Ecommerce.svg?style=for-the-badge
+[issues-url]: https://github.com/NguyenN95/Ecommerce/issues
 
-[license-shield]: https://img.shields.io/github/license/NguyenN95/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/NguyenN95/repo_name/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/NguyenN95/Ecommerce.svg?style=for-the-badge
+[license-url]: https://github.com/NguyenN95/Ecommerce/blob/master/LICENSE.txt
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/nguyenn95
 
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/screenshot.gif
 
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap.com]: https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[GitHub Actions]: https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white
+[GitHub-Actions-url]: https://github.com/features/actions
+
+[C#]: https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white
+[CSharp-url]: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/
+
+[Docker]: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com/
+
+[.Net]: https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white
+[.Net-url]: https://dotnet.microsoft.com/en-us/download
+
+[Blazor]: https://img.shields.io/badge/blazor-%235C2D91.svg?style=for-the-badge&logo=blazor&logoColor=white
+[Blazor-url]: https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
