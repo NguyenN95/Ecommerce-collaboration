@@ -19,10 +19,12 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Go to Frontend folder
-      run: cd Frontend; pwd; ls
+      run: cd Frontend
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore "Ecommerce.csproj"
     - name: Build
-      run: dotnet publish -c Release -o Public
+      run: dotnet build "Ecommerce.csproj" -c Release -o build
+    - name: Publish
+      run: dotnet publish "Ecommerce.csproj" -c Release -o publish
     - name: Check result
       run: ls
