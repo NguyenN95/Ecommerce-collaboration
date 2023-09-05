@@ -25,13 +25,13 @@
 
 @code
 {
-    private List<Product> products;
+    private List<Product> products = new();
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            products = await httpClient.GetFromJsonAsync<List<Product>>("/api/Product");
+            products = await httpClient.GetFromJsonAsync<List<Product>?>("Products") ?? new();
         }
         catch (Exception ex)
         {
