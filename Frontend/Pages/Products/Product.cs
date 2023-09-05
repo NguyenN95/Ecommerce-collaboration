@@ -1,6 +1,6 @@
-namespace Ecommerce.Pages.Models;
+namespace Ecommerce.Pages.Products;
 
-public class ProductModel
+public class Product
 {
     public int ID { get; set; }
 

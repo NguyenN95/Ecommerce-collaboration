@@ -1,0 +1,42 @@
+@using Ecommerce.Pages.Products
+@inject HttpClient httpClient
+@page "/products"
+
+<PageTitle>Product</PageTitle>
+
+@foreach (var product in products)
+{
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="https://1.bp.blogspot.com/-0wOgEueUxlc/YS0OHHBKQuI/AAAAAAAAGQk/73E_We0JwaIoTJTYpvlmYQ_ljxfn3OxgACLcBGAsYHQ/s1350/Kinh%2Bnghi%25E1%25BB%2587m%2Bxu%25E1%25BA%25A5t%2Bb%25E1%25BA%25A3n%2Bs%25C3%25A1ch%2B%25E1%25BB%259F%2BVi%25E1%25BB%2587t%2BNam.jpg"
+                    class="card-img" alt="Product">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@product.NameProduct</h5>
+                    <p class="card-text">Price: $@product.PriceProduct</p>
+                    <p class="card-text">Quantity Sold: @product.QuantitySold</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code
+{
+    private List<Product> products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            products = await httpClient.GetFromJsonAsync<List<Product>>("/api/Product");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+}
+
