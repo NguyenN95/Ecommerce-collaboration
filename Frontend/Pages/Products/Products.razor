@@ -31,7 +31,11 @@
     {
         try
         {
-            products = await httpClient.GetFromJsonAsync<List<Product>?>("Products") ?? new();
+            var list = await httpClient.GetFromJsonAsync<List<Product>?>("Products");
+            if (list != null)
+            {
+                products = list;
+            }
         }
         catch (Exception ex)
         {
