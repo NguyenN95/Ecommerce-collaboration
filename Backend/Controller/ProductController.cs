@@ -6,14 +6,22 @@ namespace Ecommerce.ProductController;
 
 public class ProductController : BaseApiController
 {
-    private ProductModel newProduct = new ProductModel(){
-        ID = 1,
-        NameProduct = "sách",
-        NumberProduct = 10,
-        NumberSale = 5,
-        StatusProduct = true
+    private List<ProductModel> newProduct = new List<ProductModel>(){
+         new ProductModel{
+            ID = 1,
+            NameProduct = "sách",
+            PriceProduct = 100000,
+            QuantitySold = 5,
+            StatusProduct = true
+        },
+        new ProductModel{
+            ID = 2,
+            NameProduct = "vở",
+            PriceProduct = 200000,
+            QuantitySold = 1,
+            StatusProduct = true
+        }
     };
-
     // private readonly ILogger<WeatherForecastController> _logger;
 
     // public WeatherForecastController(ILogger<WeatherForecastController> logger)
@@ -22,7 +30,7 @@ public class ProductController : BaseApiController
     // }
 
     [HttpGet]
-    public ActionResult<ProductModel> ShowProduct()
+    public ActionResult<List<ProductModel>> ShowProduct()
     {
         return newProduct;        
     }
