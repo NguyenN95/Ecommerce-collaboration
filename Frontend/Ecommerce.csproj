@@ -21,8 +21,8 @@
   <Target Name="CopyBootstrapCSSFiles" BeforeTargets="PreBuildEvent">
       <Copy SourceFiles="$(Pkgbootstrap)\contentFiles\any\any\wwwroot\css\bootstrap.min.css" DestinationFolder="$(ProjectDir)wwwroot\css\bootstrap" SkipUnchangedFiles="true"/>
       <Copy SourceFiles="$(Pkgbootstrap)\contentFiles\any\any\wwwroot\css\bootstrap.min.css.map" DestinationFolder="$(ProjectDir)wwwroot\css\bootstrap" SkipUnchangedFiles="true"/>
-      <Copy SourceFiles="$(Pkgbootstrap)\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js" DestinationFolder="$(ProjectDir)wwwroot\js\bootstrap" SkipUnchangedFiles="true"/>
-      <Copy SourceFiles="$(Pkgbootstrap)\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js.map" DestinationFolder="$(ProjectDir)wwwroot\js\bootstrap" SkipUnchangedFiles="true"/>
+      <!-- <Copy SourceFiles="$(Pkgbootstrap)\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js" DestinationFolder="$(ProjectDir)wwwroot\js\bootstrap" SkipUnchangedFiles="true"/>
+      <Copy SourceFiles="$(Pkgbootstrap)\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js.map" DestinationFolder="$(ProjectDir)wwwroot\js\bootstrap" SkipUnchangedFiles="true"/> -->
   </Target>
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
