@@ -8,17 +8,17 @@ public class ProductsController : BaseApiController
     private readonly List<Product> newProduct = new(){
          new Product{
             ID = 1,
-            NameProduct = "sách",
-            PriceProduct = 100000,
+            Name = "sách",
+            Price = 100000,
             QuantitySold = 5,
-            StatusProduct = true
+            Status = true
         },
         new Product{
             ID = 2,
-            NameProduct = "vở",
-            PriceProduct = 200000,
+            Name = "vở",
+            Price = 200000,
             QuantitySold = 1,
-            StatusProduct = true
+            Status = true
         }
     };
 
