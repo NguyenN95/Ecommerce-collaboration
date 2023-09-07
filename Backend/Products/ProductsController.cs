@@ -5,7 +5,7 @@ namespace Ecommerce.Products;
 
 public class ProductsController : BaseApiController
 {
-    private readonly List<Product> newProduct = new(){
+    private readonly List<Product> ListProduct = new(){
          new Product{
             ID = 1,
             Name = "sách",
@@ -23,8 +23,42 @@ public class ProductsController : BaseApiController
     };
 
     [HttpGet]
-    public IActionResult ShowProduct()
+    public IActionResult ShowAll()
     {
-        return Ok(newProduct);
+        return Ok(ListProduct);
+    }
+    [HttpGet("id")]
+    public IActionResult GetByID(int id)
+    {
+        var product = ListProduct!.FirstOrDefault(x => x.ID == id);
+        return Ok(product);
+    }
+    [HttpPost]
+    public IActionResult Create(int id, string name, int price)
+    {
+        Product Product = new Product{
+            ID = id,
+            Name = name,
+            Price = price,
+            QuantitySold = 0,
+            Status = true, 
+        };
+        ListProduct.Add(Product);
+        return Ok(Product);
+    }
+    [HttpPut("id")]
+    public IActionResult Edit(int id, string name, int price, bool status)
+    {
+        var product = ListProduct!.FirstOrDefault(x => x.ID == id);
+        if(product != null)
+        {
+            product.Name = name;
+            product.Price = price;
+            product.Status = status;
+        }
+        else{
+            return Ok("Product does not exist");
+        }
+        return Ok(product);
     }
 }
