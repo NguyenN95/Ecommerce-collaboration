@@ -1,7 +1,9 @@
-﻿@page "/"
+﻿@using Ecommerce.Shared.Home
+@page "/"
 
 <PageTitle>Ecommerce | Home</PageTitle>
 
+<ProductSlider></ProductSlider>
 
 <!-- Featured Start -->
 <div class="container-fluid pt-5">
@@ -487,40 +489,6 @@
         </div>
     </div>
 </div>
-<!-- Products End -->
+<!-- Products End --> 
 
-
-<!-- Vendor Start -->
-<div class="container-fluid py-5">
-    <div class="row px-xl-5">
-        <div class="col">
-            <div class="owl-carousel vendor-carousel">
-                <div class="vendor-item border p-4">
-                    <img src="images/vendor-1.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="images/vendor-2.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="images/vendor-3.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="images/vendor-4.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="images/vendor-5.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="images/vendor-6.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="images/vendor-7.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="images/vendor-8.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Vendor End -->
+<VendorsSlider></VendorsSlider>
