@@ -1,4 +1,4 @@
-namespace Ecommerce.Pages.Login;
+namespace Ecommerce.Pages.Auth;
 
 public class LoginModel{
     public string Email {get; set;}

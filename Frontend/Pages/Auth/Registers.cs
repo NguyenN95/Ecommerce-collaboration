@@ -1,4 +1,4 @@
-namespace Ecommerce.Pages.Register;
+namespace Ecommerce.Pages.Auth;
 
 public class Registers {
     public string Email {get; set;}
