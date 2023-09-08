@@ -29,8 +29,8 @@
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search for products">
                     <div class="input-group-append">
-                        <span class="input-group-text bg-transparent text-primary">
-                            <i class="bi bi-search"></i>
+                        <span class="input-group-text bg-transparent text-primary" style="cursor: pointer;">
+                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                         </span>
                     </div>
                 </div>
@@ -38,13 +38,72 @@
         </div>
         <div class="col-lg-3 col-6 text-end">
             <a href="" class="btn border">
-                <i class="bi bi-heart text-primary"></i>
+                <i class="fa-solid fa-heart text-primary"></i>
                 <span class="badge text-primary fw-bold">0</span>
             </a>
             <a href="" class="btn border">
-                <i class="bi bi-cart3 text-primary"></i>
+                <i class="fa-solid fa-cart-shopping text-primary"></i>
                 <span class="badge text-primary fw-bold">0</span>
             </a>
         </div>
     </div>
 </div>
+
+<style>
+    .input-group-prepend,
+    .input-group-append {
+        display: flex;
+    }
+
+    .input-group-prepend .btn,
+    .input-group-append .btn {
+        position: relative;
+        z-index: 2;
+    }
+
+    .input-group-prepend .btn:focus,
+    .input-group-append .btn:focus {
+        z-index: 3;
+    }
+
+    .input-group-prepend .btn+.btn,
+    .input-group-prepend .btn+.input-group-text,
+    .input-group-prepend .input-group-text+.input-group-text,
+    .input-group-prepend .input-group-text+.btn,
+    .input-group-append .btn+.btn,
+    .input-group-append .btn+.input-group-text,
+    .input-group-append .input-group-text+.input-group-text,
+    .input-group-append .input-group-text+.btn {
+        margin-left: -1px;
+    }
+
+    .input-group-prepend {
+        margin-right: -1px;
+    }
+
+    .input-group-append {
+        margin-left: -1px;
+    }
+
+    .input-group-lg>.form-control,
+    .input-group-lg>.custom-select,
+    .input-group-lg>.input-group-prepend>.input-group-text,
+    .input-group-lg>.input-group-append>.input-group-text,
+    .input-group-lg>.input-group-prepend>.btn,
+    .input-group-lg>.input-group-append>.btn {
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    .input-group-sm>.form-control,
+    .input-group-sm>.custom-select,
+    .input-group-sm>.input-group-prepend>.input-group-text,
+    .input-group-sm>.input-group-append>.input-group-text,
+    .input-group-sm>.input-group-prepend>.btn,
+    .input-group-sm>.input-group-append>.btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+</style>

@@ -1,5 +1,7 @@
 namespace Ecommerce.Pages.Products;
 
+#nullable disable
+
 public class ProductModel
 {
     public int ID { get; set; }
