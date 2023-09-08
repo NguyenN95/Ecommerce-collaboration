@@ -1,8 +1,8 @@
-namespace Ecommerce.Pages.Products;
+namespace Ecommerce.Shared.Models;
 
 #nullable disable
 
-public class ProductModel
+public class Product
 {
     public int ID { get; set; }
 

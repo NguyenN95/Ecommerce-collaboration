@@ -158,13 +158,13 @@
 </div>
 @code
 {
-    private List<ProductModel> products = new();
+    private List<Product> products = new();
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            var list = await httpClient.GetFromJsonAsync<List<ProductModel>?>("Products");
+            var list = await httpClient.GetFromJsonAsync<List<Product>?>("Products");
             if (list != null)
             {
                 products = list;

@@ -1,3 +1,76 @@
+﻿@inherits LayoutComponentBase
+
+@* Top bar *@
+<div class="container-fluid">
+    <div class="row bg-secondary py-2 px-xl-5">
+        <div class="col-lg-6 d-none d-lg-block">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-dark" href="">FAQs</a>
+                <span class="text-muted px-2">|</span>
+                <a class="text-dark" href="">Help</a>
+                <span class="text-muted px-2">|</span>
+                <a class="text-dark" href="">Support</a>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center text-lg-end">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-dark" href="/login">Login</a>
+                <span class="text-muted px-2">|</span>
+                <a class="text-dark" href="/register">Register</a>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center py-3 px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+            <a href="" class="text-decoration-none">
+                <h1 class="m-0 display-5 fw-semi-bold"><span
+                        class="text-bg-primary fw-bold border px-3 mr-1">E</span>Shopper</h1>
+            </a>
+        </div>
+        <div class="col-lg-6 col-6 text-start">
+            <form action="">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for products">
+                    <div class="input-group-append">
+                        <span class="input-group-text bg-transparent text-primary" style="cursor: pointer;">
+                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3 col-6 text-end">
+            <a href="" class="btn border">
+                <i class="fa-solid fa-heart text-primary"></i>
+                <span class="badge text-primary fw-bold">0</span>
+            </a>
+            <a href="" class="btn border">
+                <i class="fa-solid fa-cart-shopping text-primary"></i>
+                <span class="badge text-primary fw-bold">0</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+@* Category bar *@
+<div class="container-fluid">
+    <div class="row border-top px-xl-5 bg-primary mt-3 py-3">
+        <div class="col-lg-9">
+            <nav class="navbar navbar-expand-lg py-3 py-lg-0 px-0">
+                @foreach (var item in CateNavItems)
+                {
+                    <a href="@item.Link" class="text-decoration-none text-white me-3 fw-bold">
+                        @item.Name
+                    </a>
+                }
+            </nav>
+        </div>
+    </div>
+</div>
+
+@Body
+
+@* Footer *@
 <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
     <div class="row px-xl-5 pt-5">
         <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
@@ -100,3 +173,20 @@
         </div>
     </div>
 </div>
+
+@* <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a> *@
+
+@code {
+    private CateNavItem[] CateNavItems = {
+new CateNavItem { Link = "/", Name="Dresses" },
+new CateNavItem { Link = "/", Name="Shirts" },
+new CateNavItem { Link = "/", Name="Jeans" },
+new CateNavItem { Link = "/", Name="Swimwear" },
+new CateNavItem { Link = "/", Name="Sleepwear" },
+new CateNavItem { Link = "/", Name="Sportswear" },
+new CateNavItem { Link = "/", Name="Jumpsuits" },
+new CateNavItem { Link = "/", Name="Blazers" },
+new CateNavItem { Link = "/", Name="Jackets" },
+new CateNavItem { Link = "/", Name="Shoes" }
+};
+}
