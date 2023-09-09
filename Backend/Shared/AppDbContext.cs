@@ -1,4 +1,5 @@
 using Ecommerce.ShopProduct;
+using Ecommerce.ShopProduct.ProductCategory;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Shared;
@@ -12,6 +13,7 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<Product> Products { get; set; }
+    public DbSet<Category> Categories { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
