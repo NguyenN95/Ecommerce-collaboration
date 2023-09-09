@@ -1,0 +1,153 @@
+@page "/cart"
+
+@* Page Header Start *@
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="fw-semi-bold text-uppercase mb-3">Shopping Cart</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="">Home</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">Shopping Cart</p>
+        </div>
+    </div>
+</div>
+
+@* Cart Start *@
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8 table-responsive mb-5">
+            <table class="table table-bordered text-center mb-0">
+                <thead class="bg-secondary text-dark">
+                    <tr>
+                        <th>Products</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody class="align-middle">
+                    @foreach (var item in customerCart.Items)
+                    {
+                        <tr>
+                            <td class="align-middle">
+                                <img src="@item.ImageUrl" alt="@item.Name" style="width: 50px;"> @item.Name
+                            </td>
+                            <td class="align-middle">@item.Price.ToString("C2")</td>
+                            <td class="align-middle">
+                                <div class="input-group quantity mx-auto" style="width: 100px;">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-primary btn-minus"
+                                        @onclick="@(() => ChangeQuantity(item.Id, ChangeOpt.Substract))">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm bg-secondary text-center"
+                                        value="@item.Quantity">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-primary btn-plus"
+                                        @onclick="@(() => ChangeQuantity(item.Id, ChangeOpt.Add))">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="align-middle">@((item.Price * item.Quantity).ToString("C2"))</td>
+                            <td class="align-middle">
+                                <button class="btn btn-sm btn-primary" @onclick="@(() => RemoveItem(item.Id))">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-4">
+            <div class="card border-secondary mb-5">
+                <div class="card-header bg-secondary border-0">
+                    <h4 class="fw-semi-bold m-0">Cart Summary</h4>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3 pt-1">
+                        <h6 class="fw-medium">Subtotal</h6>
+                        <h6 class="fw-medium">@SubTotal.ToString("C2")</h6>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h6 class="fw-medium">Shipping</h6>
+                        <h6 class="fw-medium">@ShippingFee.ToString("C2")</h6>
+                    </div>
+                </div>
+                <div class="card-footer border-secondary bg-transparent">
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5 class="fw-bold">Total</h5>
+                        <h5 class="fw-bold">@Total.ToString("C2")</h5>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary my-3 py-3">Proceed To Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private enum ChangeOpt
+    {
+        Add,
+        Substract
+    }
+    private CustomerCart customerCart = new();
+    private decimal ShippingFee = 10;
+    private decimal Total = 0;
+    private decimal SubTotal = 0;
+
+    protected override void OnInitialized()
+    {
+        customerCart.Items.Add(new CustomerCartItem
+            {
+                Id = 1,
+                ImageUrl = "images/product-1.jpg",
+                Name = "Colorful Stylish Shirt",
+                Price = 150,
+                Quantity = 10
+            });
+        customerCart.Items.Add(new CustomerCartItem
+            {
+                Id = 2,
+                ImageUrl = "images/product-2.jpg",
+                Name = "Colorful Stylish Pants",
+                Price = 200,
+                Quantity = 5
+            });
+        UpdateSubTotalAndTotal(customerCart.Items);
+    }
+
+    private void ChangeQuantity(int itemId, ChangeOpt opt, int amount = 1)
+    {
+        var cartItem = customerCart.Items.FirstOrDefault(i => i.Id == itemId);
+        if (cartItem != null)
+        {
+            if (opt == ChangeOpt.Add) cartItem.Quantity += amount;
+            else if (opt == ChangeOpt.Substract) cartItem.Quantity -= amount;
+            UpdateSubTotalAndTotal(customerCart.Items);
+        }
+    }
+
+    private void RemoveItem(int itemId)
+    {
+        var cartItem = customerCart.Items.FirstOrDefault(i => i.Id == itemId);
+        if (cartItem != null)
+        {
+            customerCart.Items.Remove(cartItem);
+        }
+    }
+
+    private void UpdateSubTotalAndTotal(IEnumerable<CustomerCartItem> items)
+    {
+        @* TODO: handle Change of quantity *@
+        SubTotal = items.Sum(i => i.Price * i.Quantity);
+        Total = SubTotal + ShippingFee;
+    }
+}
