@@ -1,4 +1,5 @@
 @page "/cart"
+@inject HttpClient httpClient
 
 @* Page Header Start *@
 <div class="container-fluid bg-secondary mb-5">
@@ -31,14 +32,14 @@
                     {
                         <tr>
                             <td class="align-middle">
-                                <img src="@item.ImageUrl" alt="@item.Name" style="width: 50px;"> @item.Name
+                                <img src="@item.ImageUrl" alt="@item.ProductName" style="width: 50px;"> @item.ProductName
                             </td>
                             <td class="align-middle">@item.Price.ToString("C2")</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-primary btn-minus"
-                                        @onclick="@(() => ChangeQuantity(item.Id, ChangeOpt.Substract))">
+                                        @onclick="@(() => ChangeQuantity(item.ProductId, ChangeOpt.Substract))">
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
@@ -46,7 +47,7 @@
                                         value="@item.Quantity">
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-primary btn-plus"
-                                        @onclick="@(() => ChangeQuantity(item.Id, ChangeOpt.Add))">
+                                        @onclick="@(() => ChangeQuantity(item.ProductId, ChangeOpt.Add))">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
@@ -54,7 +55,7 @@
                             </td>
                             <td class="align-middle">@((item.Price * item.Quantity).ToString("C2"))</td>
                             <td class="align-middle">
-                                <button class="btn btn-sm btn-primary" @onclick="@(() => RemoveItem(item.Id))">
+                                <button class="btn btn-sm btn-primary" @onclick="@(() => RemoveItem(item.ProductId))">
                                     <i class="fa fa-times"></i>
                                 </button>
                             </td>
@@ -103,30 +104,19 @@
     private decimal Total = 0;
     private decimal SubTotal = 0;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        customerCart.Items.Add(new CustomerCartItem
-            {
-                Id = 1,
-                ImageUrl = "images/product-1.jpg",
-                Name = "Colorful Stylish Shirt",
-                Price = 150,
-                Quantity = 10
-            });
-        customerCart.Items.Add(new CustomerCartItem
-            {
-                Id = 2,
-                ImageUrl = "images/product-2.jpg",
-                Name = "Colorful Stylish Pants",
-                Price = 200,
-                Quantity = 5
-            });
-        UpdateSubTotalAndTotal(customerCart.Items);
+        var responseData = await httpClient.GetFromJsonAsync<CustomerCart>("Carts?id=AAA");
+        if (responseData != null)
+        {
+            customerCart = responseData;
+            UpdateSubTotalAndTotal(customerCart.Items);
+        }
     }
 
     private void ChangeQuantity(int itemId, ChangeOpt opt, int amount = 1)
     {
-        var cartItem = customerCart.Items.FirstOrDefault(i => i.Id == itemId);
+        var cartItem = customerCart.Items.FirstOrDefault(i => i.ProductId == itemId);
         if (cartItem != null)
         {
             if (opt == ChangeOpt.Add) cartItem.Quantity += amount;
@@ -137,7 +127,7 @@
 
     private void RemoveItem(int itemId)
     {
-        var cartItem = customerCart.Items.FirstOrDefault(i => i.Id == itemId);
+        var cartItem = customerCart.Items.FirstOrDefault(i => i.ProductId == itemId);
         if (cartItem != null)
         {
             customerCart.Items.Remove(cartItem);

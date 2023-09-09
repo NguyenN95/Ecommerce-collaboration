@@ -5,21 +5,31 @@ namespace Ecommerce.CustomerCart;
 
 public class CartsController : BaseApiController
 {
-    [HttpGet]
-    public IActionResult GetCartById(string id)
+    private readonly ICartRepository cartRepository;
+
+    public CartsController(ICartRepository cartRepository)
     {
-        return Ok();
+        this.cartRepository = cartRepository;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetCartById(string id)
+    {
+        var cart = await cartRepository.GetCartAsync(id);
+        return Ok(cart ?? new ShoppingCart(id));
     }
 
     [HttpPost]
-    public IActionResult UpdateCart(ShoppingCart cart)
+    public async Task<IActionResult> UpdateCart(ShoppingCart cart)
     {
-        return Ok();
+        var updatedCart = await cartRepository.UpdateCartAsync(cart);
+        return Ok(updatedCart);
     }
 
     [HttpDelete]
-    public IActionResult DeleteCartById(string id)
+    public async Task<IActionResult> DeleteCartById(string id)
     {
+        await cartRepository.DeleteCartAsync(id);
         return Ok();
     }
 }

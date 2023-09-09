@@ -1,3 +1,4 @@
+using Ecommerce.CustomerCart;
 using Ecommerce.Seeding;
 using Ecommerce.Shared;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +38,9 @@ public class Program
         {
             options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
         });
+
+        builder.Services.AddScoped<ICartRepository, CartRepository>();
+        builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
         var app = builder.Build();
 
