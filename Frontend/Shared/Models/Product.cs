@@ -1,4 +1,4 @@
-namespace Ecommerce.Shared.Models;
+namespace Ecommerce.Pages.ProductsPage;
 
 #nullable disable
 
