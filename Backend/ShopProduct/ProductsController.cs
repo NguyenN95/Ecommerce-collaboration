@@ -1,7 +1,7 @@
 using Ecommerce.Shared;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Ecommerce.Products;
+namespace Ecommerce.ShopProduct;
 
 public class ProductsController : BaseApiController
 {

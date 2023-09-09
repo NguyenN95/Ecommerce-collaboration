@@ -1,4 +1,4 @@
-using Ecommerce.Products;
+using Ecommerce.ShopProduct;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Shared;
