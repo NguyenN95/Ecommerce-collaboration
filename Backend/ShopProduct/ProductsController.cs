@@ -8,18 +8,52 @@ public class ProductsController : BaseApiController
     private readonly List<Product> ListProduct = new(){
          new Product{
             ID = 1,
-            Name = "sách",
-            Price = 100000,
+            Name = "Shirt",
+            Img = "https://www.mrporter.com/variants/images/3633577411310824/in/w2000_q60.jpg",
+            Price = 50,
             QuantitySold = 5,
             Status = true
         },
         new Product{
             ID = 2,
-            Name = "vở",
-            Price = 200000,
+            Name = "Pants",
+            Img = "https://bizweb.dktcdn.net/100/438/408/files/cargo-pants-yodyvn.jpg?v=1670222023662",
+            Price = 95,
             QuantitySold = 1,
             Status = true
-        }
+        },
+        new Product{
+            ID = 3,
+            Name = "Polo Shirt",
+            Img = "https://oldsailor.com.vn/vnt_upload/product/10_2022/13c3a4af1039d7678e2816.jpg",
+            Price = 70,
+            QuantitySold = 1,
+            Status = true
+        },
+        new Product{
+            ID = 4,
+            Name = "Jeans",
+            Img = "https://www.arket.com/content/dam/P11/images/campaigns/2023/23109-arketjeans/fits/ARKETJEANS_W_CLOUD_WIDE_RIGID_SIZE_27_0081.jpg",
+            Price = 120,
+            QuantitySold = 1,
+            Status = true
+        },
+        new Product{
+            ID = 5,
+            Name = "Shorts",
+            Img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLoKmMwANH3Bj4VonduTxDRxdri5WVWGoLJr3e04vcOjJcs1npvBWTOR7nFhId_Okkzow&usqp=CAU",
+            Price = 30,
+            QuantitySold = 1,
+            Status = true
+        },
+        new Product{
+            ID = 6,
+            Name = "Vest",
+            Img = "https://www.anphuoc.com.vn/Data/Sites/1/Product/3777/vest-pie0192_1-2.jpg",
+            Price = 250,
+            QuantitySold = 1,
+            Status = true
+        },
     };
 
     [HttpGet]

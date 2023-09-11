@@ -8,7 +8,9 @@ public class Product
 
     public string Name { get; set; }
 
-    public int Price { get; set; }
+    public string Img { get; set; }
+
+    public double Price { get; set; }
 
     public int QuantitySold { get; set; }
 
