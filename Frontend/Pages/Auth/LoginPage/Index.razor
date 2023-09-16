@@ -1,12 +1,22 @@
 @page "/login"
 
+<div class="container-fluid">
+    <div style="padding-left: 20vw; border-bottom: 2px solid #d2d2d2;" class="row align-items-center py-3">
+        <a href="" class="text-decoration-none">
+            <h1 class="m-0  fw-semi-bold">
+                <span class="text-bg-primary fw-bold border px-3 mr-1">E</span>Shopper
+            </h1>
+        </a>        
+    </div>
+</div>
+
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="card">
-                <div class="card-header bg-primary text-white" style="height: 57px; align-items: center; display: flex; justify-content: center; font-size: 35px;">LOGIN</div>
+                <div class="card-header bg-primary text-white" style="height: 57px; align-items: center; display: flex; justify-content: center; font-size: 35px; font-weight: 600;">LOGIN</div>
                 <div class="card-body">
-                    <form action="#" method="POST">
+                    <form action="#" style="position: relative;" method="POST">
                         <div style="margin-top: 20px;" class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" class="form-control" id="email" name="email" required>
@@ -16,7 +26,21 @@
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                         <div>
-                            <button type="submit" style="width: 120px; margin: 20px 0 20px 0;" class="btn btn-primary mt-4">Login</button>
+                            <a style="text-decoration: none;"  href="/">Forgot password</a>
+                        </div>
+                        <div class="d-flex">
+                            <button type="submit" style="width: 100%; margin: 20px 0 20px 0; font-size: 17px; font-weight: 400;" class="btn btn-primary mt-4">Login</button>
+                        </div>
+                        <div style="border-top: 1px solid black; margin-bottom: 10px;" class="d-flex"></div>
+                        <div style="top: 240px; position: absolute; background: none; width: 100%; justify-content: center;"  class="d-flex">
+                            <div style=" background-color: white; color: black; padding: 0 5px 0 5px;">Or</div>   
+                        </div>
+                        <div class="d-flex" style="margin: 20px 0 20px 0; justify-content: space-between; font-size: 17px; font-weight: 400;">
+                            <button type="submit" style="width: 8vw; background-color: white; color: black; font-weight: 400;" class="btn-login btn btn-primary"><i style="color: #1877f2; margin-right: 3px;" class="fa-brands fa-facebook"></i>FaceBook</button>
+                            <button type="submit" style="width: 8vw; background-color: white; color: black; font-weight: 400;" class="btn-login btn btn-primary"><i style="color: #e34133; margin-right: 3px;" class="fa-brands fa-google"></i>Google</button>
+                        </div>
+                        <div class="d-flex">
+                            Do not have an account? <a style="text-decoration: none; margin-left: 5px;"  href="/register">Register</a>
                         </div>
                     </form>
                 </div>
@@ -24,7 +48,12 @@
         </div>
     </div>
 </div>
-
+<style>
+    .btn-login:hover {
+        background-color: #008cba !important;
+        color: white !important;
+    }
+</style>
 
 @code{
     public List<Login> login = new();
